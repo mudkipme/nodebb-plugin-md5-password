@@ -1,0 +1,25 @@
+{
+  "name": "nodebb-plugin-md5-password",
+  "version": "1.0.0",
+  "description": "Support login of users imported from ancient forum softwares saving password in plain md5.",
+  "main": "md5-password.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mudkipme/nodebb-plugin-md5-password.git"
+  },
+  "keywords": [
+    "nodebb"
+  ],
+  "author": "Mudkip",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mudkipme/nodebb-plugin-md5-password/issues"
+  },
+  "homepage": "https://github.com/mudkipme/nodebb-plugin-md5-password#readme",
+  "nbbpm": {
+    "compatibility": "^1.0.0"
+  }
+}

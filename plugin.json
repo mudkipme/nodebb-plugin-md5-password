@@ -1,0 +1,6 @@
+{
+    "library": "md5-password.js",
+    "hooks": [
+        { "hook": "action:nodebb.ready", "method": "hookCompare" }
+    ]
+}
