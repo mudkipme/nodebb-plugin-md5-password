@@ -1,6 +1,6 @@
 {
   "name": "nodebb-plugin-md5-password",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Support login of users imported from ancient forum softwares saving password in plain md5.",
   "main": "md5-password.js",
   "scripts": {

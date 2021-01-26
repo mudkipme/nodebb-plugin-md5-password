@@ -2,17 +2,16 @@ const crypto = require('crypto');
 
 const Md5Password = {
     hookCompare() {
-        const Password = module.parent.require('./password');
+        const Password = require.main.require('./src/password');
         const originalCompare = Password.compare;
 
-        Password.compare = function compare(password, hash, callback) {
-            originalCompare(password, hash, function (err, passwordMatch) {
-                if (err || passwordMatch) {
-                    return callback(err, passwordMatch);
-                }
-                const md5 = crypto.createHash('md5').update(password).digest('hex').toString();
-                originalCompare(md5, hash, callback);
-            });
+        Password.compare = async function compare(password, hash, shaWrapped) {
+            const result = await originalCompare(password, hash, shaWrapped);
+            if (result) {
+                return result;
+            }
+            const md5 = crypto.createHash('md5').update(password).digest('hex').toString();
+            return await originalCompare(md5, hash, shaWrapped);
         };
     }
 };
